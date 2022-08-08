@@ -9,3 +9,12 @@ export const getProperties = () => async (dispatch) => {
     console.log(err.message);
   }
 };
+
+export const createProperty = (property) => async (dispatch) => {
+  try {
+    const { data } = await api.createProperty(property);
+    dispatch({ type: "CREATE", payload: data });
+  } catch (err) {
+    console.log(err.message);
+  }
+};

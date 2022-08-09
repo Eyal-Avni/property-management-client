@@ -1,5 +1,5 @@
 import React from "react";
-import Properties from "./components/Properties/Properties";
+import PropertiesMain from "./components/Properties/PropertiesMain";
 import Tenants from "./components/Tenants/Tenants";
 import Tasks from "./components/Tasks/Tasks";
 import Home from "./components/Home/Home";
@@ -10,7 +10,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/home" element={<Home />} />
-        <Route path="/properties" element={<Properties />} />
+        <Route path="/properties" element={<PropertiesMain />} />
         <Route path="/tenants" element={<Tenants />} />
         <Route path="/tasks" element={<Tasks />} />
       </Routes>

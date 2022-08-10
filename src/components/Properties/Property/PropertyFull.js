@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 const PropertyFull = () => {
   const { id } = useParams();
@@ -40,8 +42,32 @@ const PropertyFull = () => {
           <ListGroup.Item>No. of rooms - {property.rooms}</ListGroup.Item>
         </ListGroup>
         <Card.Body>
-          <Card.Link href="#">Remove</Card.Link>
-          <Card.Link href="#">Edit</Card.Link>
+          <Card.Link
+            href="#"
+            style={{
+              textDecoration: "none",
+            }}
+          >
+            <Button variant="danger">Remove</Button>
+          </Card.Link>
+          <Card.Link
+            href="#"
+            style={{
+              textDecoration: "none",
+            }}
+          >
+            <Button variant="info">Edit</Button>
+          </Card.Link>
+          <Card.Link>
+            <Link
+              to={"/properties"}
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              <Button>Back to all properties</Button>
+            </Link>
+          </Card.Link>
         </Card.Body>
       </Card>
     </Container>

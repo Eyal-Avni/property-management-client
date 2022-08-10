@@ -15,7 +15,9 @@ const PropertiesMain = () => {
         </Col>
         <Col md={2} xs={2}>
           <Link to={"/properties/new"}>
-            <Button>Add new property</Button>
+            <Button style={{ display: "block", width: "100%" }}>
+              Add new property
+            </Button>
           </Link>
         </Col>
       </Row>

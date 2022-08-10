@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createProperty } from "../../actions/properties";
 import Container from "react-bootstrap/Container";
+import { useNavigate } from "react-router-dom";
 
 const NewPropertyForm = () => {
   const [propertyData, setpropertyData] = useState({
@@ -23,6 +24,7 @@ const NewPropertyForm = () => {
   const [validated, setValidated] = useState(false);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -32,6 +34,7 @@ const NewPropertyForm = () => {
     }
     setValidated(true);
     dispatch(createProperty(propertyData));
+    navigate("/properties");
   };
 
   const clear = () => {

@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getProperties } from "./actions/properties.js";
 import AppRouter from "./AppRouter.js";
+import { NavLink, BrowserRouter } from "react-router-dom";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -15,19 +16,28 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <Navbar bg="light" variant="light">
+    <BrowserRouter>
+      <Navbar bg="light" variant="light" expand="lg">
         <Container>
           <Navbar.Brand href="home">Property Management App</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="properties">Properties</Nav.Link>
-            <Nav.Link href="tenants">Tenants</Nav.Link>
-            <Nav.Link href="tasks">Tasks & Alerts</Nav.Link>
-          </Nav>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link as={NavLink} to="/properties">
+                Properties
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/tenants">
+                Tenants
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/tasks">
+                Tasks & Alerts
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
       <AppRouter />
-    </>
+    </BrowserRouter>
   );
 };
 

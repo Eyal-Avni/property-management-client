@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const PropertyCard = ({ property }) => {
   return (
-    <Card className="mb-3">
+    <Card className="mb-4">
       <Card.Body>
         <Card.Title>
           {property.number} {property.street} {property.city}

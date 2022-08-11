@@ -6,6 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import PageNotFound from "../../PageNotFound/PageNotFound";
 
 const PropertyFull = () => {
   const { id } = useParams();
@@ -16,9 +17,11 @@ const PropertyFull = () => {
     ...properties.filter((res) => res._id === id)
   );
 
-  return (
-    <Container className="d-flex justify-content-center">
-      <Card className="mt-3 ">
+  return Object.keys(property).length === 0 ? (
+    <PageNotFound />
+  ) : (
+    <Container className="mb-3">
+      <Card className="mt-3">
         <Card.Img
           align="center"
           variant="top"
@@ -33,13 +36,13 @@ const PropertyFull = () => {
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroup.Item>
-            Address -{property.number} {property.street}, {property.city}{" "}
+            Address: {property.number} {property.street}, {property.city}{" "}
           </ListGroup.Item>
           <ListGroup.Item>
             floor: {property.floor}, Apartment Number: {property.apt}
           </ListGroup.Item>
-          <ListGroup.Item>Size - {property.size}</ListGroup.Item>
-          <ListGroup.Item>No. of rooms - {property.rooms}</ListGroup.Item>
+          <ListGroup.Item>Size: {property.size} m²</ListGroup.Item>
+          <ListGroup.Item>No. of rooms: {property.rooms}</ListGroup.Item>
         </ListGroup>
         <Card.Body>
           <Card.Link

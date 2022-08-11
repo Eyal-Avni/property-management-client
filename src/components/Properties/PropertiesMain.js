@@ -10,10 +10,10 @@ const PropertiesMain = () => {
   return (
     <Container>
       <Row className="mb-3">
-        <Col md={10} xs={10}>
+        <Col md={9} xs={9}>
           <h3>All properties:</h3>
         </Col>
-        <Col md={2} xs={2}>
+        <Col md={3} xs={3}>
           <Link to={"/properties/new"}>
             <Button style={{ display: "block", width: "100%" }}>
               Add new property

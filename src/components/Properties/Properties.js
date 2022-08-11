@@ -7,7 +7,6 @@ import Row from "react-bootstrap/Row";
 
 const Properties = () => {
   const properties = useSelector((state) => state.properties);
-  console.log(properties);
 
   return !properties.length ? (
     <Spinner animation="border" role="status">
